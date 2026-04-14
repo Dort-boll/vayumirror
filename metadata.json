@@ -1,0 +1,8 @@
+{
+  "name": "VayuMirror PRO",
+  "description": "A production-grade GPU-powered optical mirror system with reactive UI energy fields and edge-glow border dynamics.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}
