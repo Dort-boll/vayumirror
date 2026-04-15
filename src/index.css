@@ -7,18 +7,18 @@
 }
 
 :root {
-  --bg-panel: rgba(255, 255, 255, 0.1);
-  --border-panel: rgba(255, 255, 255, 0.2);
-  --text-primary: rgba(255, 255, 255, 0.9);
-  --text-secondary: rgba(255, 255, 255, 0.6);
+  --bg-panel: rgba(255, 255, 255, 0.15);
+  --border-panel: rgba(255, 255, 255, 0.25);
+  --text-primary: rgba(255, 255, 255, 0.95);
+  --text-secondary: rgba(255, 255, 255, 0.65);
   --accent: #ffffff;
 }
 
 .light-theme {
-  --bg-panel: rgba(0, 0, 0, 0.1);
-  --border-panel: rgba(0, 0, 0, 0.2);
-  --text-primary: rgba(0, 0, 0, 0.9);
-  --text-secondary: rgba(0, 0, 0, 0.6);
+  --bg-panel: rgba(0, 0, 0, 0.15);
+  --border-panel: rgba(0, 0, 0, 0.25);
+  --text-primary: rgba(0, 0, 0, 0.95);
+  --text-secondary: rgba(0, 0, 0, 0.65);
   --accent: #000000;
 }
 
@@ -50,8 +50,8 @@ body {
 /* Glassmorphism Utility */
 .glass {
   background: var(--bg-panel);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
   border: 1px solid var(--border-panel);
   color: var(--text-primary);
 }

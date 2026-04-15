@@ -80,20 +80,42 @@ export default function App() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center p-6 text-center">
-        <div className="max-w-md bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-2xl">
-          <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CameraIcon className="text-red-500" size={32} />
-          </div>
-          <h1 className="text-2xl font-bold text-white mb-4">Camera Access Required</h1>
-          <p className="text-white/60 mb-8 leading-relaxed">
-            To use VayuMirror, we need access to your webcam. Please enable camera permissions in your browser.
-          </p>
-          <button 
-            onClick={() => startCamera()}
-            className="w-full py-4 bg-white text-black font-bold rounded-2xl hover:bg-white/90 transition-colors"
+      <div className="min-h-screen bg-black flex items-center justify-center p-6 text-center font-sans">
+        <div className="max-w-md glass rounded-[32px] p-10 shadow-2xl border-white/10">
+          <motion.div 
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="w-20 h-20 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-8 border border-red-500/20"
           >
-            Try Again
+            <CameraIcon className="text-red-500" size={36} />
+          </motion.div>
+          
+          <h1 className="text-2xl font-bold text-white mb-4 tracking-tight">Camera Access Required</h1>
+          
+          <div className="space-y-4 mb-10 text-sm leading-relaxed">
+            <p className="text-white/60">
+              VayuMirror PRO requires camera access to render real-time optical effects.
+            </p>
+            
+            <div className="bg-white/5 rounded-2xl p-4 text-left border border-white/5">
+              <span className="text-[10px] font-bold uppercase tracking-widest text-white/40 block mb-2">How to fix:</span>
+              <ul className="list-disc list-inside text-white/70 space-y-2">
+                <li>Click the <span className="text-white font-bold">Lock Icon</span> in your browser address bar.</li>
+                <li>Set Camera to <span className="text-green-400 font-bold">"Allow"</span>.</li>
+                <li>Refresh this page or click the button below.</li>
+              </ul>
+            </div>
+
+            <p className="text-[10px] text-white/30 uppercase tracking-widest">
+              Note: If you are in a preview window, try opening the app in a new tab.
+            </p>
+          </div>
+
+          <button 
+            onClick={() => window.location.reload()}
+            className="w-full py-4 bg-white text-black font-bold rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-xl"
+          >
+            Refresh & Try Again
           </button>
         </div>
       </div>
