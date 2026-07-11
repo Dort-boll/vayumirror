@@ -3,11 +3,13 @@ import { useCamera } from './hooks/useCamera';
 import { MirrorCanvas } from './components/MirrorCanvas';
 import { Controls } from './components/UI/Controls';
 import { Selectors } from './components/UI/Selectors';
+import { IntroScreen } from './components/IntroScreen';
 import { motion, AnimatePresence } from 'motion/react';
 import { Beaker, Settings, X, Camera as CameraIcon } from 'lucide-react';
 
 export default function App() {
   const { stream, error, startCamera, devices, activeDeviceId, facingMode, switchCamera } = useCamera();
+  const [showIntro, setShowIntro] = useState(true);
   const [activeLens, setActiveLens] = useState(0);
   const [activeFilter, setActiveFilter] = useState(0);
   const [intensity, setIntensity] = useState(0.5);
@@ -77,6 +79,10 @@ export default function App() {
     document.addEventListener('fullscreenchange', handleFsChange);
     return () => document.removeEventListener('fullscreenchange', handleFsChange);
   }, []);
+
+  if (showIntro) {
+    return <IntroScreen onEnter={() => setShowIntro(false)} />;
+  }
 
   if (error) {
     return (
